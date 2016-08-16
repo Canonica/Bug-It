@@ -77,24 +77,5 @@ class AdminController extends Controller
         return $images;
     }
 
-    public function uploadImages(){
-        $image = new Image();
-        if(Input::get("action")){
-            $image->name = Input::get("name");
-            $image->published = 0;
-            $image->idPlayer = Input::get("idPlayer");
-            $image->save();
-            if(Input::file('image')->isValid()){
-                $destinationPath = base_path('public/img/app/');
-                $extension = Input::file('image')->getClientOriginalExtension();
-                $fileName = Input::get("name").'.'.$extension;
-                Input::file('image')->move($destinationPath, $fileName); 
-            }
-        }
-        return Redirect::back();
-    }
-
-    public function attributeID(){
-        $player = new Player();
-    }
+    
 }

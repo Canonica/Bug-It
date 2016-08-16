@@ -29,6 +29,9 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::post('/addPlayer', ['uses'=>'ApplicationController@attributeID']);
+Route::post('/uploadImages', ['uses'=>'ApplicationController@uploadImages']);
+
 
 /* DEBUG */
 
